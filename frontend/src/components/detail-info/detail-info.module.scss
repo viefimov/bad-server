@@ -1,0 +1,50 @@
+.detailInfo {
+    padding: 20px;
+
+    &__container {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(40%, 1fr));
+        gap: 20px;
+    }
+    &__title {
+        font-size: $titleFontSize;
+    }
+    &__subtitle {
+        font-size: $mainFontSize;
+    }
+    &__item {
+        color: #fff;
+        padding: 20px;
+        border-radius: 8px;
+        font-size: $mainFontSize;
+    }
+
+    &__itemTitle {
+        font-size: $baseFontSize;
+        color: $hover;
+    }
+
+    &__itemArray {
+        margin: 0;
+        padding: 0;
+        list-style: none;
+        display: flex;
+        gap: $baseFontSize;
+        flex-direction: column;
+    }
+
+    &__itemWrap {
+        display: flex;
+        flex-direction: column;
+        gap: $baseFontSize;
+    }
+
+    &__actions {
+        display: flex;
+        justify-content: center;
+        margin-top: 20px;
+        font-size: $mainFontSize;
+        gap: 80px;
+        grid-column: 1 / -1;
+    }
+}

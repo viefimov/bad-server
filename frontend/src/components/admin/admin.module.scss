@@ -1,0 +1,139 @@
+.admin {
+    &__container {
+        @include mixins.container(45px, 45px);
+    }
+    &__products {
+        @include mixins.flex(column);
+        gap: 80px;
+    }
+    &__title {
+        font-size: $titleFontSize;
+        margin: 0;
+    }
+
+    &__header {
+        @include mixins.flex(row);
+        align-items: center;
+        justify-content: space-between;
+    }
+
+    &__button {
+        align-self: flex-start;
+
+        &_alt {
+            @include mixins.button(white, $primaryLight, $primaryLight);
+            border: $defaultBorder;
+            margin-left: auto;
+            &:hover {
+                border: $hoverBorder;
+            }
+        }
+
+        &_secondary {
+            @include mixins.button(white, $primaryLight, $primaryLight);
+            border: $defaultBorder;
+            &:hover {
+                border: $hoverBorder;
+            }
+        }
+    }
+
+    &__buttons {
+        @include mixins.flex(row);
+    }
+
+    &__file {
+        @include mixins.button(white, $primaryLight, $primaryLight);
+        border: $defaultBorder;
+        &:hover {
+            border: $hoverBorder;
+        }
+    }
+    &__listCount {
+        font-size: $mainFontSize;
+        color: $hover;
+
+        &:before {
+            content: '•';
+            margin-right: $baseFontSize;
+        }
+    }
+    &__headerTitle {
+        display: flex;
+        align-items: baseline;
+        gap: $baseFontSize;
+    }
+
+    &__actionTable {
+        display: flex;
+        gap: 40px;
+        font-size: $mainFontSize;
+    }
+
+    &__dataList {
+        list-style: none;
+        display: flex;
+        flex-direction: column;
+        gap: $baseFontSize;
+        margin: 0;
+        padding: 0;
+    }
+
+    &__tableRow {
+        text-decoration: none;
+        color: inherit;
+    }
+
+    &__searchLabel {
+        flex-grow: 2;
+    }
+    &__searchInput {
+        border-radius: $baseFontSize;
+    }
+
+    &__gridRowFullWidth {
+        grid-column: 1 / -1;
+    }
+
+    &__tableCell {
+        display: flex;
+        flex-direction: column;
+        gap: 10px;
+    }
+    &__tableCellSubtitle {
+        font-size: $baseFontSize;
+        color: $hover;
+    }
+
+    &__gridCell {
+        display: flex;
+        gap: $baseFontSize;
+    }
+
+    &__formSearch {
+        @include mixins.flex(row);
+        flex-grow: 2;
+        gap: 40px;
+    }
+}
+
+.label__price {
+    align-self: flex-start;
+    width: 50%;
+}
+
+.cancelled {
+    color: $category5;
+}
+
+.completed {
+    color: $category1;
+}
+
+.delivering {
+    color: $category3;
+}
+
+.new {
+    color: $baseFontColor;
+}

@@ -1,0 +1,5 @@
+.button {
+    @include mixins.button($primary, white, $hover);
+    border: 0;
+    text-decoration: none;
+}

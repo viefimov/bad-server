@@ -1,0 +1,23 @@
+.logout {
+    max-width: $maxPageWidth;
+    margin: 0 auto;
+}
+.logout__container {
+    @include mixins.container(45px, 45px);
+    @include mixins.flex(row);
+    max-width: $containerPageWidth;
+    margin: 0;
+}
+
+.logout__title {
+    font-size: $titleFontSize;
+}
+
+.logout__button_secondary {
+    @include mixins.button(white, $secondaryLight, $secondaryLight);
+    border: $defaultBorder;
+    &:hover {
+        border: $hoverBorder;
+        opacity: 1;
+    }
+}

@@ -1,0 +1,39 @@
+.customEditor {
+    & .rsw-toolbar {
+        background-color: transparent;
+        border: none;
+        justify-content: flex-end;
+    }
+    & .rsw-editor {
+        background: transparent;
+        color: white;
+        border: $defaultBorder;
+        border-color: $secondary;
+        border-radius: 1.5rem;
+        padding: 20px 50px;
+        width: 100%;
+        box-sizing: border-box;
+        &::-webkit-inner-spin-button,
+        &::-webkit-calendar-picker-indicator {
+            display: none;
+            -webkit-appearance: none;
+        }
+
+        &:focus {
+            border-color: $primaryLight;
+            outline: none;
+        }
+    }
+
+    & .rsw-btn {
+        border-radius: 10px;
+        &:hover {
+            background-color: $primaryLight;
+        }
+    }
+
+    & .rsw-link-title {
+        font-size: $baseFontSize;
+        color: $secondary;
+    }
+}

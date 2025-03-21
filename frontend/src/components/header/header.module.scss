@@ -1,0 +1,98 @@
+.header {
+    height: $headerHeight;
+    background-color: $primary;
+
+    &__container {
+        @include mixins.container(45px, 45px);
+        @include mixins.flex(row);
+        align-items: center;
+        justify-content: space-between;
+        gap: $defaultPadding;
+    }
+
+    &__logo {
+        height: $headerElementsSize;
+        margin-right: 100px;
+        &-image {
+            display: block;
+            height: 100%;
+        }
+    }
+
+    &__link {
+        color: inherit;
+        text-decoration: none;
+    }
+
+    &__links {
+        @include mixins.flex(row);
+        gap: 48px;
+        margin-right: auto;
+    }
+
+    &__icon {
+        &::before {
+            content: '';
+            height: 58px;
+            width: 58px;
+            display: block;
+        }
+        @include mixins.flex(column);
+        gap: 8px;
+        align-items: center;
+        color: inherit;
+        text-decoration: none;
+    }
+
+    &__icon-text {
+        @include mixins.hidden;
+    }
+
+    &__login {
+        &::before {
+            background-image: url('/src/assets/login.svg');
+        }
+    }
+
+    &__user {
+        text-decoration: none;
+        color: inherit;
+    }
+
+    &__logout {
+        &::before {
+            background-image: url('/src/assets/logout.svg');
+        }
+    }
+
+    &__profile {
+        &::before {
+            background-image: url('/src/assets/person.svg');
+        }
+    }
+
+    &__basket {
+        &::before {
+            background-image: url('/src/assets/shopping_cart.svg');
+        }
+        margin-left: auto;
+        position: relative;
+        cursor: pointer;
+
+        &-counter {
+            position: absolute;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            top: 0;
+            right: -0.2rem;
+            width: 0.8rem;
+            height: 0.8rem;
+            font-size: 0.5rem;
+            background-color: $category1;
+            color: $background;
+            border-radius: 100%;
+            font-weight: 600;
+        }
+    }
+}

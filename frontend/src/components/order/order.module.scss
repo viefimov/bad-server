@@ -1,0 +1,63 @@
+.order {
+    @include mixins.flex(column);
+    gap: 4rem;
+    margin-bottom: 4rem;
+
+    &__field {
+        @include mixins.flex(column);
+        gap: 1.5rem;
+    }
+
+    &__buttons {
+        @include mixins.flex(row);
+        gap: 1.5rem;
+    }
+
+    &__button {
+        &_alt {
+            @include mixins.button(white, $primaryLight, $primaryLight);
+            border: $defaultBorder;
+            &:hover {
+                border: $hoverBorder;
+            }
+        }
+
+        &_alt_active {
+            @include mixins.button(white, $secondaryLight, $secondaryLight);
+            border: $hoverBorder;
+        }
+
+        &_secondary {
+            @include mixins.button(white, $secondaryLight, $secondaryLight);
+            opacity: 0.6;
+            border: $defaultBorder;
+            &:hover {
+                border: $hoverBorder;
+                opacity: 1;
+            }
+        }
+    }
+
+    &__success {
+        @include mixins.flex(column);
+        justify-content: center;
+        align-items: center;
+        text-align: center;
+        gap: 1rem;
+
+        &::before {
+            content: ' ';
+            @include mixins.background('../../assets/success.png');
+            width: 256px;
+            height: 256px;
+        }
+    }
+
+    &__title {
+        font-size: $titleFontSize;
+        margin-bottom: 0;
+    }
+    &__close {
+        margin-top: 2rem;
+    }
+}

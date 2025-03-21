@@ -1,0 +1,41 @@
+.filter {
+    display: grid;
+    grid-template-columns: min-content min-content;
+    gap: $mainFontSize;
+
+    &__label {
+        flex-direction: row;
+        align-items: center;
+        column-gap: $baseFontSize;
+        margin-bottom: 50px;
+
+        & span {
+            flex-grow: inherit;
+        }
+    }
+
+    &__labelFullWidth {
+        grid-column: 1 / -1;
+    }
+
+    &__input {
+        width: max-content;
+    }
+
+    &__select {
+        grid-column: 1 / -1;
+        margin-bottom: 50px;
+    }
+
+    &__button {
+        align-self: flex-start;
+        &_alt {
+            @include mixins.button(white, $primaryLight, $primaryLight);
+            border: $defaultBorder;
+            margin-left: auto;
+            &:hover {
+                border: $hoverBorder;
+            }
+        }
+    }
+}

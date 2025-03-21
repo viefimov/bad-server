@@ -1,0 +1,33 @@
+body {
+    margin: 0;
+}
+
+html,
+body.page {
+    height: 100%;
+    font-family: $font;
+    font-size: $baseFontSize;
+    color: $baseFontColor;
+    background: $background;
+}
+
+.page__wrapper {
+    width: 100%;
+
+    &_locked {
+        position: fixed;
+    }
+}
+
+::-webkit-scrollbar {
+    width: 8px;
+}
+
+::-webkit-scrollbar-track {
+    background: $primaryLight;
+}
+
+::-webkit-scrollbar-thumb {
+    border: 3px solid #8585ad;
+    background: #8585ad;
+}

@@ -1,0 +1,60 @@
+[{
+  "_id": {
+    "$oid": "66ed71ce9c59262364955b3e"
+  },
+  "name": "Admin",
+  "email": "admin@mail.ru",
+  "password": "5f4dcc3b5aa765d61d8327deb882cf99",
+  "roles": [
+    "admin"
+  ],
+  "lastOrderDate": null,
+  "lastOrder": null,
+  "totalAmount": 0,
+  "orderCount": 0,
+  "orders": [],
+  "tokens": [
+    {
+      "token": "c03738d48927a424d2439b85d50853b58f67e15e2c9fe9b5b62c6f313c8610ee",
+      "_id": {
+        "$oid": "66edb90c9b289d24854b30b7"
+      }
+    }
+  ],
+  "createdAt": {
+    "$date": "2024-09-20T12:59:58.737Z"
+  },
+  "updatedAt": {
+    "$date": "2024-09-20T18:03:56.272Z"
+  }
+},
+{
+  "_id": {
+    "$oid": "66ed725a9c59262364955b5f"
+  },
+  "name": "First Customer",
+  "email": "user1@mail.ru",
+  "password": "7c6a180b36896a0a8c02787eeafb0e4c",
+  "roles": [
+    "customer"
+  ],
+  "lastOrderDate": null,
+  "lastOrder": null,
+  "totalAmount": 0,
+  "orderCount": 0,
+  "orders": [],
+  "tokens": [
+    {
+      "token": "3101840723f742c206f69fba3ceb5725cde5d73f478fe907e962836061d2accc",
+      "_id": {
+        "$oid": "66ed725a9c59262364955b61"
+      }
+    }
+  ],
+  "createdAt": {
+    "$date": "2024-09-20T13:02:18.404Z"
+  },
+  "updatedAt": {
+    "$date": "2024-09-20T13:02:18.408Z"
+  }
+}]

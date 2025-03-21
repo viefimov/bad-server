@@ -1,0 +1,82 @@
+@use '../variables' as *;
+@use './container' as mixins;
+
+@mixin button($color: $primary, $main: white, $hover: $secondary) {
+    padding: 1rem 2rem;
+    color: $color;
+    font-weight: 500;
+    background: $main;
+    border-radius: 0.8rem;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+
+    &:hover {
+        background: $hover;
+    }
+
+    &:disabled {
+        cursor: default;
+        opacity: 0.25;
+
+        &:hover {
+            background: $main;
+        }
+    }
+}
+
+@mixin hidden() {
+    position: absolute;
+    width: 1px;
+    height: 1px;
+    margin: -1px;
+    border: 0;
+    padding: 0;
+    white-space: nowrap;
+    clip-path: inset(100%);
+    clip: rect(0 0 0 0);
+    overflow: hidden;
+}
+
+@mixin link($main: white, $hover: $secondary) {
+    padding: 0;
+    color: $main;
+    background: transparent;
+    border: none;
+    border-radius: 0;
+    cursor: pointer;
+    transition: color 0.3s ease;
+
+    &:hover {
+        color: $hover;
+    }
+
+    &:disabled {
+        cursor: default;
+        opacity: 0.25;
+
+        &:hover {
+            color: $main;
+        }
+    }
+}
+
+@mixin selectable($selected, $size, $hover) {
+    cursor: pointer;
+    position: relative;
+    transition: background-color 0.3s ease;
+
+    &:hover {
+        //box-shadow: inset 0 0 0 $size $color;
+        background-color: $hover;
+    }
+
+    &:disabled {
+        opacity: 0.25;
+        cursor: default;
+    }
+
+    &:hover:disabled {
+        //box-shadow: inset 0 0 0 0 $color;
+        background-color: unset;
+    }
+}

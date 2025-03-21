@@ -1,0 +1,35 @@
+.basket {
+    &__title {
+        font-size: $titleFontSize;
+        font-weight: 500;
+        margin: 0;
+        flex-grow: 1;
+    }
+
+    &__item {
+        border-bottom: 1px solid $primary;
+        padding: 1.5rem 0;
+        display: flex;
+        align-items: center;
+
+        &_index {
+            @include mixins.flex(row);
+            justify-content: center;
+            align-items: center;
+            font-size: 1.5rem;
+            width: 55px;
+            height: 55px;
+            border-radius: 50%;
+            background-color: $primary;
+            color: white;
+            margin-right: 1rem;
+        }
+
+        &_delete {
+            @include mixins.icon(2rem, 'trash');
+            @include mixins.link($hover, white);
+            opacity: 0.5;
+            margin-left: 4rem;
+        }
+    }
+}

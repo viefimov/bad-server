@@ -1,0 +1,9 @@
+.form {
+    @include mixins.flex(column);
+    gap: 80px;
+    font-size: $mainFontSize;
+    border-radius: 3rem;
+    max-width: $maxPageWidth;
+    margin: 0 auto;
+    padding-top: $defaultPadding;
+}

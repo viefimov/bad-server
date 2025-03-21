@@ -1,0 +1,130 @@
+[{
+  "_id": {
+    "$oid": "66edb93e9b289d24854b30de"
+  },
+  "title": "+1 час в сутках",
+  "image": {
+    "fileName": "/images/5_Dots.png",
+    "originalName": "5_Dots.png"
+  },
+  "category": "софт-скил",
+  "description": "Если планируете решать задачи в тренажёре, берите два.",
+  "price": 750
+},
+{
+  "_id": {
+    "$oid": "66edb98a9b289d24854b30e8"
+  },
+  "title": "HEX-леденец",
+  "image": {
+    "fileName": "/images/Shell.png",
+    "originalName": "Shell.png"
+  },
+  "category": "другое",
+  "description": "Лизните этот леденец, чтобы мгновенно запоминать и узнавать любой цветовой код CSS.",
+  "price": 1450
+},
+{
+  "_id": {
+    "$oid": "66edb9c69b289d24854b30f2"
+  },
+  "title": "Мамка-таймер",
+  "image": {
+    "fileName": "/images/Asterisk_2.png",
+    "originalName": "Asterisk_2.png"
+  },
+  "category": "софт-скил",
+  "description": "Будет стоять над душой и не давать прокрастинировать.",
+  "price": null
+},
+{
+  "_id": {
+    "$oid": "66edba0c9b289d24854b30fc"
+  },
+  "title": "Фреймворк куки судьбы",
+  "image": {
+    "fileName": "/images/Soft_Flower.png",
+    "originalName": "Soft_Flower.png"
+  },
+  "category": "дополнительное",
+  "description": "Откройте эти куки, чтобы узнать, какой фреймворк вы должны изучить дальше.",
+  "price": 2500
+},
+{
+  "_id": {
+    "$oid": "66edba2c9b289d24854b3106"
+  },
+  "title": "Кнопка «Замьютить кота»",
+  "image": {
+    "fileName": "/images/mute-cat.png",
+    "originalName": "mute-cat.png"
+  },
+  "category": "кнопка",
+  "description": "Если орёт кот, нажмите кнопку.",
+  "price": 2000
+},
+{
+  "_id": {
+    "$oid": "66edba4e9b289d24854b3110"
+  },
+  "title": "БЭМ-пилюлька",
+  "image": {
+    "fileName": "/images/Pill.png",
+    "originalName": "Pill.png"
+  },
+  "category": "другое",
+  "description": "Чтобы научиться правильно называть модификаторы, без этого не обойтись.",
+  "price": 1500
+},
+{
+  "_id": {
+    "$oid": "66edba6e9b289d24854b311a"
+  },
+  "title": "Портативный телепорт",
+  "image": {
+    "fileName": "/images/Polygon.png",
+    "originalName": "Polygon.png"
+  },
+  "category": "другое",
+  "description": "Измените локацию для поиска работы.",
+  "price": 100000
+},
+{
+  "_id": {
+    "$oid": "66edba879b289d24854b3124"
+  },
+  "title": "Микровселенная в кармане",
+  "image": {
+    "fileName": "/images/Butterfly.png",
+    "originalName": "Butterfly.png"
+  },
+  "category": "другое",
+  "description": "Даст время для изучения React, ООП и бэкенда",
+  "price": 750
+},
+{
+  "_id": {
+    "$oid": "66edba9f9b289d24854b312e"
+  },
+  "title": "UI/UX-карандаш",
+  "image": {
+    "fileName": "/images/Leaf.png",
+    "originalName": "Leaf.png"
+  },
+  "category": "хард-скил",
+  "description": "Очень полезный навык для фронтендера. Без шуток.",
+  "price": 10000
+},
+{
+  "_id": {
+    "$oid": "66edbaba9b289d24854b3138"
+  },
+  "title": "Бэкенд-антистресс",
+  "image": {
+    "fileName": "/images/Mithosis.png",
+    "originalName": "Mithosis.png"
+  },
+  "category": "другое",
+  "description": "Сжимайте мячик, чтобы снизить стресс от тем по бэкенду.",
+  "price": 1000
+}]

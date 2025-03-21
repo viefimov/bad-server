@@ -1,0 +1,50 @@
+.form {
+    &__field {
+        @include mixins.flex(column);
+        gap: 1.5em;
+    }
+
+    &__label {
+        flex-grow: 1;
+    }
+
+    &__error {
+        color: $error;
+    }
+
+    &__input {
+        background: transparent;
+        color: white;
+        border: $defaultBorder;
+        border-color: $secondary;
+        border-radius: 1.5rem;
+        padding: 20px 50px;
+        width: 100%;
+        box-sizing: border-box;
+
+        &::-webkit-inner-spin-button,
+        &::-webkit-calendar-picker-indicator {
+            display: none;
+            -webkit-appearance: none;
+        }
+
+        &:focus {
+            border-color: $primaryLight;
+            outline: none;
+        }
+
+        &::placeholder {
+            color: $hover;
+        }
+
+        &[type='number']::-webkit-inner-spin-button {
+            appearance: none;
+            -webkit-appearance: none;
+        }
+    }
+}
+
+textarea.form__input {
+    resize: none;
+    min-height: 225px;
+}

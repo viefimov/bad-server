@@ -1,0 +1,27 @@
+.form {
+    &__field {
+        @include mixins.flex(column);
+        gap: 1.5em;
+    }
+    &__label {
+        flex-grow: 1;
+    }
+
+    &__error {
+        color: $error;
+    }
+
+    &__radio {
+        appearance: none;
+        position: absolute;
+        overflow: hidden;
+        left: 0;
+        top: 0;
+        & div {
+            border: $defaultBorder;
+        }
+        &:checked ~ div {
+            border: $hoverBorder;
+        }
+    }
+}

@@ -1,0 +1,38 @@
+.table {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+
+    border-radius: 4px;
+    overflow: hidden;
+
+    &__header,
+    &__row {
+        display: flex;
+        padding-top: 45px;
+        padding-bottom: 45px;
+        border-bottom: 1px solid $hover;
+    }
+
+    &__headerCell,
+    &__cell {
+        flex: 1;
+        padding: 10px;
+        text-align: left;
+    }
+
+    &__headerCell {
+        color: $hover;
+        font-size: $baseFontSize;
+    }
+
+    &__cell {
+        font-size: $mainFontSize;
+        white-space: pre-wrap;
+    }
+
+    &__row:hover {
+        background-color: darken($hover, $amount: 20);
+        cursor: pointer;
+    }
+}

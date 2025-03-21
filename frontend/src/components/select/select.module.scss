@@ -1,0 +1,86 @@
+.selectWrapper {
+    position: relative;
+}
+
+.container {
+    display: flex;
+    flex-direction: column;
+    row-gap: 4px;
+}
+
+.selectTitle {
+    margin-bottom: $mainFontSize;
+}
+.arrow {
+    position: absolute;
+    top: 50%;
+    right: 50px;
+    translate: 0 -50%;
+    transform: rotate(180deg);
+    transition:
+        transform 0.2s ease-in-out,
+        margin-top 0.2s ease-in-out;
+}
+
+.placeholder {
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    box-sizing: border-box;
+    width: 100%;
+    padding: 20px 50px;
+    background: transparent;
+    color: $hover;
+    border-radius: 20px;
+    border: 2px solid $secondary;
+    cursor: pointer;
+}
+
+.placeholder[data-selected='true'] {
+    color: $secondary;
+}
+
+.selectWrapper[data-is-active='true'] .arrow {
+    transform: rotate(0);
+}
+
+.selectWrapper[data-is-active='true'] .placeholder {
+    border: 2px solid $secondary;
+    border-radius: 20px 20px 0 0;
+}
+
+.select {
+    position: absolute;
+    z-index: 10;
+    display: grid;
+    box-sizing: border-box;
+    width: 100%;
+    margin: 0;
+    padding: 0;
+    list-style: none;
+    background-color: transparent;
+    border: 2px solid $secondary;
+    border-top: none;
+    border-radius: 0 0 20px 20px;
+    overflow: hidden;
+}
+
+.option {
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    height: 30px;
+    padding: 5px;
+    padding: 20px 50px;
+    background-color: $background;
+    border: 1px;
+    cursor: pointer;
+}
+
+.option[aria-selected='true'] {
+    background-color: $secondaryLight;
+}
+
+.option:hover {
+    background: $primaryLight;
+}

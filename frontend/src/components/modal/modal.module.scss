@@ -1,0 +1,74 @@
+.modal {
+    @include mixins.sublayer;
+    height: max-content;
+    display: none;
+    justify-content: center;
+    z-index: 100;
+    padding-top: 5vh;
+    padding-bottom: 5vh;
+    &_active {
+        display: flex;
+    }
+
+    &::before {
+        content: '';
+        position: fixed;
+        top: 0;
+        left: 0;
+        right: 0;
+        bottom: 0;
+        background-color: $overlayBackground;
+    }
+
+    &__container {
+        @include mixins.container;
+        @include mixins.flex(column);
+        gap: $defaultPadding;
+        background-color: $background;
+        border-radius: 3rem;
+        box-sizing: border-box;
+        position: relative;
+    }
+
+    &__content {
+        flex-grow: 1;
+    }
+
+    &__title {
+        margin: 0;
+        font-size: 1.5rem;
+        font-weight: 400;
+        margin-bottom: 30px;
+    }
+
+    &__actions {
+        @include mixins.flex(row);
+        align-items: center;
+        gap: 2rem;
+    }
+
+    &__close {
+        position: absolute;
+        top: calc(#{$defaultPadding} / 2);
+        right: calc(#{$defaultPadding} / 2);
+        @include mixins.icon(2rem, 'close');
+        @include mixins.link(white, $hover);
+    }
+
+    &__footer {
+        @include mixins.flex(row);
+        align-items: center;
+        gap: 2rem;
+    }
+
+    &__message {
+        white-space: nowrap;
+        max-width: 60%;
+        text-overflow: ellipsis;
+        overflow: hidden;
+
+        &_error {
+            color: $error;
+        }
+    }
+}
