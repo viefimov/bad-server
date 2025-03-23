@@ -128,6 +128,7 @@ async function imageDimensionsCheck(
 const upload = multer({
     storage,
     fileFilter,
+    // limits: { fileSize: MAX_FILE_SIZE },
 })
 
 export default { upload, fileSizeCheck, imageDimensionsCheck }
