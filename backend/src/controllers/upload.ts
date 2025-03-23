@@ -11,13 +11,17 @@ export const uploadFile = async (
         return next(new BadRequestError('Файл не загружен'))
     }
     try {
-        const uniqueFileName = req.file?.filename
-        const fileName = process.env.UPLOAD_PATH
-            ? `/${process.env.UPLOAD_PATH}/${req.file.filename}`
-            : `/${uniqueFileName}`
-            console.log('File uploaded successfully:', fileName);
+        // Генерация нового уникального имени файла без оригинального имени
+        const generatedFileName = `${faker.string.uuid()}.jpg` 
+
+        const filePath = process.env.UPLOAD_PATH
+            ? `/${process.env.UPLOAD_PATH}/${generatedFileName}`
+            : `/${generatedFileName}`
+
+        console.log('File uploaded successfully:', filePath);
+
         return res.status(constants.HTTP_STATUS_CREATED).send({
-            fileName,
+            fileName: filePath,
             originalName: req.file?.originalname,
         })
     } catch (error) {
@@ -25,5 +29,6 @@ export const uploadFile = async (
         return next(error)
     }
 }
+
 
 export default {}
