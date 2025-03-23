@@ -9,7 +9,6 @@ export enum PaymentType {
     Online = 'online',
 }
 
-// валидация id
 export const validateOrderBody = celebrate({
     body: Joi.object().keys({
         items: Joi.array()
@@ -29,14 +28,21 @@ export const validateOrderBody = celebrate({
             .required()
             .messages({
                 'string.valid':
-                    'Указано не валидное значение для способа оплаты, возможные значения - "card", "online"',
+                    'Указано не валидное значение для способа оплаты',
                 'string.empty': 'Не указан способ оплаты',
             }),
         email: Joi.string().email().required().messages({
             'string.empty': 'Не указан email',
         }),
-        phone: Joi.string().required().pattern(phoneRegExp).messages({
+        phone: Joi.string()
+        .required()
+        .min(10)
+        .max(20)
+        .pattern(phoneRegExp)
+        .messages({
             'string.empty': 'Не указан телефон',
+            'string.max': 'Номер телефона не должен превышать 20 символов',
+            'string.pattern.base': 'Номер телефона должен быть в формате +7XXXXXXXXXX или 8XXXXXXXXXX',
         }),
         address: Joi.string().required().messages({
             'string.empty': 'Не указан адрес',
@@ -48,8 +54,6 @@ export const validateOrderBody = celebrate({
     }),
 })
 
-// валидация товара.
-// name и link - обязательные поля, name - от 2 до 30 символов, link - валидный url
 export const validateProductBody = celebrate({
     body: Joi.object().keys({
         title: Joi.string().required().min(2).max(30).messages({
@@ -124,7 +128,7 @@ export const validateAuthentication = celebrate({
         email: Joi.string()
             .required()
             .email()
-            .message('Поле "email" должно быть валидным email-адресом')
+            .message('Поле "email" должно быть валидным адресом')
             .messages({
                 'string.required': 'Поле "email" должно быть заполнено',
             }),

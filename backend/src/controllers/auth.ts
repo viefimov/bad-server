@@ -10,6 +10,18 @@ import NotFoundError from '../errors/not-found-error'
 import UnauthorizedError from '../errors/unauthorized-error'
 import User from '../models/user'
 
+export const decodeRefreshToken = (refreshToken: string): JwtPayload => {
+    try {
+        const decoded = jwt.verify(
+            refreshToken,
+            REFRESH_TOKEN.secret
+        ) as JwtPayload
+        return decoded
+    } catch (error) {
+        throw new UnauthorizedError('Не валидный токен')
+    }
+}
+
 // POST /auth/login
 const login = async (req: Request, res: Response, next: NextFunction) => {
     try {
@@ -64,7 +76,6 @@ const register = async (req: Request, res: Response, next: NextFunction) => {
     }
 }
 
-// GET /auth/user
 const getCurrentUser = async (
     _req: Request,
     res: Response,
@@ -84,7 +95,19 @@ const getCurrentUser = async (
     }
 }
 
-// Можно лучше: вынести общую логику получения данных из refresh токена
+
+const getUserFromRefreshToken = async (rfTkn: string) => {
+    if (!rfTkn) {
+        throw new UnauthorizedError('Не валидный токен')
+    }
+
+    const decodedRefreshTkn = decodeRefreshToken(rfTkn)
+
+    return User.findOne({ _id: decodedRefreshTkn._id }).orFail(() =>
+        new UnauthorizedError('Пользователь не найден в базе')
+    )
+}
+
 const deleteRefreshTokenInUser = async (
     req: Request,
     _res: Response,
@@ -93,17 +116,7 @@ const deleteRefreshTokenInUser = async (
     const { cookies } = req
     const rfTkn = cookies[REFRESH_TOKEN.cookie.name]
 
-    if (!rfTkn) {
-        throw new UnauthorizedError('Не валидный токен')
-    }
-
-    const decodedRefreshTkn = jwt.verify(
-        rfTkn,
-        REFRESH_TOKEN.secret
-    ) as JwtPayload
-    const user = await User.findOne({
-        _id: decodedRefreshTkn._id,
-    }).orFail(() => new UnauthorizedError('Пользователь не найден в базе'))
+    const user = await getUserFromRefreshToken(rfTkn)
 
     const rTknHash = crypto
         .createHmac('sha256', REFRESH_TOKEN.secret)
@@ -117,7 +130,8 @@ const deleteRefreshTokenInUser = async (
     return user
 }
 
-// Реализация удаления токена из базы может отличаться
+
+
 // GET  /auth/logout
 const logout = async (req: Request, res: Response, next: NextFunction) => {
     try {
