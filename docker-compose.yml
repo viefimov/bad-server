@@ -2,13 +2,13 @@ services:
   frontend:
     build:
       context: frontend
-    env_file:
-      - frontend/.env
+    environment:
+      VITE_API_ORIGIN: http://localhost/api
     volumes:
       - frontend:/app/frontend/dist
 
   mongo:
-    image: mongo
+    image: mongo:latest
     restart: always
     environment:
       MONGO_INITDB_ROOT_USERNAME: root
@@ -24,8 +24,14 @@ services:
     restart: always
     build:
       context: backend
-    env_file:
-      - backend/.env
+    environment:
+      PORT: 3000
+      DB_ADDRESS: mongodb://127.0.0.1:27017/weblarek?authSource=admin
+      UPLOAD_PATH: images
+      UPLOAD_PATH_TEMP: temp
+      ORIGIN_ALLOW: http://localhost:5173
+      AUTH_REFRESH_TOKEN_EXPIRY: 10y
+      AUTH_ACCESS_TOKEN_EXPIRY: 10y
     volumes:
       - ./backend/src:/app/src
       - public:/app/src/public
